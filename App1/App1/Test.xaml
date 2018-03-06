@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Test"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+			 xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image x:Name="PhotoImage"  Grid.Row="0" Grid.Column="0" WidthRequest="500" HeightRequest="500" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            </Grid>
+
+            <ListView x:Name="ItemsLinesView" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="0" Font="Bold"  HorizontalOptions="StartAndExpand" TextColor="Black"  FontSize="Medium" />
+                                <Label Text="{Binding Confidence}" Grid.Row="0" Grid.Column="1" HorizontalOptions="StartAndExpand"  Font="Bold" TextColor="Black"  FontSize="Medium"/>
+                            </Grid>
+                           
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+
+
+            <!--<Label  x:Name="Testrer" Text="Welcome to Xamarin.Forms.."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />-->
+
+
+
+            <Label x:Name="TypeNodel"  TextColor="White" FontAttributes="Bold" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+
+            <!--<Button TextColor="White" BackgroundColor="Blue" Text="Select From Gallery" Clicked="Handle_Clicked"/>
+            
+            
+            <flv:FlowListView FlowColumnCount="3" x:Name="listItems" 
+						SeparatorVisibility="None"
+						HasUnevenRows="false" RowHeight="100" >
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate >
+                        <ffimageloading:CachedImage  DownsampleToViewSize="true" AbsoluteLayout.LayoutFlags="All" HeightRequest="100" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="{Binding .}"  Aspect="AspectFill" HorizontalOptions="FillAndExpand">
+                        </ffimageloading:CachedImage>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+            </flv:FlowListView>-->
+
+
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

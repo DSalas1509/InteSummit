@@ -1,0 +1,35 @@
+﻿using System;
+
+using Android.App;
+using Android.Content.PM;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Android.OS;
+
+namespace App1.Droid
+{
+    [Activity(Label = "App1", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
+
+            base.OnCreate(bundle);
+
+            global::Xamarin.Forms.Forms.Init(this, bundle);
+            LoadApplication(new App());
+        }
+
+
+        void HandleAndroidException(object sender, RaiseThrowableEventArgs e)
+        {
+            //Log.Error("INTERNAL DEBUG", "PLEASE HANDLE MY EXCEPTION!");
+            e.Handled = true;
+            System.Console.Write("YOU'VE JUST BEEN HANDLED!");
+        }
+    }
+}
+
